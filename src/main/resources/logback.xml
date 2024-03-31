@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOGS" value="/var/log/tomcat" />
+
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %green(%d{yyyy-MM-dd} %d{HH:mm:ss.SSS}) | %highlight(%-5level) | %cyan(%-10.10thread) | %yellow(%-30.30logger{30}) | %m%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- LOG everything at ERROR level -->
+    <root level="error">
+        <appender-ref ref="Console" />
+    </root>
+
+    <logger name="com.zaxxer.hikari" level="info" additivity="false">
+        <appender-ref ref="Console" />
+    </logger>
+
+    <logger name="com.smartdiscover" level="debug" additivity="false">
+        <appender-ref ref="Console" />
+    </logger>
+
+</configuration>
