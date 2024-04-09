@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 @Repository
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+public interface CustomerRepository extends CrudRepository<Customer, Long>, CustomCustomerRepository {
 
     List<Customer> findAllByFirstName(String firstName);
 
