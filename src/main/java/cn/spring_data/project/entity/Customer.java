@@ -3,6 +3,8 @@ package cn.spring_data.project.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+//import static jdk.jfr.internal.SecuritySupport.registerEvent;
+
 @Data
 @Entity
 @NamedQuery(name = "Customer.searchUsingNamedQuery",
@@ -13,4 +15,9 @@ public class Customer {
     private long id;
     private String firstName;
     private String lastName;
+
+//    public void afterSave() {
+//        //registers the CustomerCreationEvent using the AbstractAggregateRoot's registerEvent method
+//        registerEvent(new CustomerCreationEvent());
+//    }
 }
